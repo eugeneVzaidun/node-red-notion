@@ -1,0 +1,44 @@
+<script type="text/javascript">
+  RED.nodes.registerType("update page", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "update page";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="update page">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="update page">
+  <p>Updates properties of a specific Notion page.</p>
+  <h2>Inputs</h2>
+  <pre>
+msg = {
+    payload: {
+        properties: {
+            // Updated properties, as per Notion API specs
+        }
+    },
+    pageId // Notion page UUID
+}
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/patch-page"
+    >Update page properties</a
+  >
+</script>

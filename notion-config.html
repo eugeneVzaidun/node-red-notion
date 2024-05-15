@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  RED.nodes.registerType("notion integration", {
+    category: "config",
+    defaults: {
+      name: { value: "", required: true },
+      apiKey: { value: "", required: true },
+    },
+    label: function () {
+      return this.name;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="notion integration">
+  <div class="form-row">
+    <label for="node-config-input-name"
+      ><i class="fa fa-bookmark"></i> Integration Name</label
+    >
+    <input type="text" id="node-config-input-name" />
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-apiKey"
+      ><i class="fa fa-bookmark"></i> Internal Integration Secret</label
+    >
+    <input type="text" id="node-config-input-apiKey" />
+  </div>
+</script>

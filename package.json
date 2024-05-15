@@ -1,0 +1,40 @@
+{
+    "name": "node-red-notion",
+    "version": "1.1.0",
+    "description": "Node-RED Notion nodes",
+    "keywords": [
+        "node-red",
+        "notion"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/Staph/node-red-notion.git"
+    },
+    "author": "Vas Zayarskiy",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://gitlab.com/Staph/node-red-notion/issues"
+    },
+    "homepage": "https://gitlab.com/Staph/node-red-notion#readme",
+    "node-red": {
+        "version": ">=3.0.2",
+        "nodes": {
+            "notion-config": "notion-config.js",
+            "append-block-children": "append-block-children.js",
+            "get-block-children": "get-block-children.js",
+            "update-block": "update-block.js",
+            "delete-block": "delete-block.js",
+            "get-page": "get-page.js",
+            "update-page": "update-page.js",
+            "create-page": "create-page.js",
+            "get-page-property": "get-page-property.js",
+            "create-database": "create-database.js",
+            "get-database": "get-database.js",
+            "query-database": "query-database.js",
+            "get-users": "get-users.js"
+        }
+    },
+    "dependencies": {
+        "@notionhq/client": "^2.2.15"
+    }
+}

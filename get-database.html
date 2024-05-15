@@ -1,0 +1,39 @@
+<script type="text/javascript">
+  RED.nodes.registerType("get database", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "get database";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="get database">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="get database">
+  <p>
+    Fetches a Notion database object containing database columns by database ID.
+  </p>
+  <h2>Inputs</h2>
+  <pre>
+msg.pageId // Notion database UUID
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/retrieve-a-database"
+    >Retrieve a database</a
+  >
+</script>

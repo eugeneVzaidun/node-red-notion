@@ -1,0 +1,65 @@
+<script type="text/javascript">
+  RED.nodes.registerType("append block children", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "append block children";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="append block children">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="append block children">
+  <p>Appends child blocks to a parent block.</p>
+  <h2>Inputs</h2>
+  <pre>
+msg = {
+    payload: {
+        "children": [
+            {
+                "object": "block",
+                "type": "heading_2",
+                "heading_2": {
+                    "rich_text": [{ "type": "text", "text": { "content": "Lacinato kale" } }]
+                }
+            },
+            {
+                "object": "block",
+                "type": "paragraph",
+                "paragraph": {
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": {
+                                "content": "Lacinato kale is a variety of kale with a long tradition in Italian cuisine, especially that of Tuscany. It is also known as Tuscan kale, Italian kale, dinosaur kale, kale, flat back kale, palm tree kale, or black Tuscan palm.",
+                                "link": { "url": "https://en.wikipedia.org/wiki/Lacinato_kale" }
+                            }
+                        }
+                    ]
+                }
+            },
+        ]
+    },
+    blockId // Notion block UUID
+}
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/patch-block-children"
+    >Append block children</a
+  >
+</script>

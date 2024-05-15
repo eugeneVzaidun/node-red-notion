@@ -1,0 +1,60 @@
+<script type="text/javascript">
+  RED.nodes.registerType("create database", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "create database";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="create database">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="create database">
+  <p>Creates a Notion database.</p>
+  <h2>Inputs</h2>
+  <pre>
+msg = {
+    payload: {
+        parent: {
+            "type": "page_id",
+            "page_id": "98ad959b-2b6a-4774-80ee-00246fb0ea9b"
+        },
+        title: [
+            {
+                type: "text",
+                text: {
+                    content: "Example"
+                },
+            },
+        ],
+        properties: {
+            Name: {
+                title: {},
+            },
+            Description: {
+                rich_text: {},
+            }
+        },
+    }
+}
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/create-a-database"
+    >Create database</a
+  >
+</script>

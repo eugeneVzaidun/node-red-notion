@@ -1,0 +1,63 @@
+<script type="text/javascript">
+  RED.nodes.registerType("query database", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "query database";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="query database">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="query database">
+  <p>Retrieves filtered results from a Notion database.</p>
+  <h2>Inputs</h2>
+  <pre>
+{
+    pageId: database UUID,
+    payload: {
+        "filter": {
+            "or": [
+                {
+                    "property": "A",
+                    "number": {
+                        "equals": 123
+                    }
+                },
+                {
+                    "property": "B",
+                    "number": {
+                        "equals": 321
+                    }
+                }
+            ]
+        },
+        "sorts": [
+            {
+                "timestamp": "created_time",
+                "direction": "descending"
+            }
+        ]
+    }
+}
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/post-database-query"
+    >Query a database</a
+  >
+</script>

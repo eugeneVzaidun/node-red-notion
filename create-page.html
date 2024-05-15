@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  RED.nodes.registerType("create page", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "create page";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="create page">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="create page">
+  <p>Creates a Notion page.</p>
+  <h2>Inputs</h2>
+  <pre>
+msg = {
+    payload: {
+        parent: {
+            "type": "database_id", // using a database example from Notion documentation
+            "database_id": "d9824bdc-8445-4327-be8b-5b47500af6ce"
+        },
+        properties: {
+            "Name": {
+                "title": [
+                    {
+                        "text": {
+                            "content": "Tuscan kale"
+                        }
+                    }
+                ]
+            },
+            // Other page properties, as per Notion API specs
+        }
+    }
+}
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/post-page">Create page</a>
+</script>

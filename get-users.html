@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  RED.nodes.registerType("get users", {
+    category: "Notion",
+    color: "#e8deee",
+    icon: "logo.svg",
+    defaults: {
+      integration: { value: "", type: "notion integration" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "get users";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="get users">
+  <div class="form-row">
+    <label for="node-input-integration"
+      ><i class="fa fa-tag"></i> Integration</label
+    >
+    <input type="text" id="node-input-integration" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="get users">
+  <p>Returns a list of users for the workspace.</p>
+  <h2>Inputs</h2>
+  <pre>
+msg = {}
+    </pre
+  >
+  <h2>API Reference</h2>
+  <a href="https://developers.notion.com/reference/get-users">List all users</a>
+</script>
